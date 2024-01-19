@@ -5,7 +5,7 @@
     //      useNewUrlParser: true ,
     //  });
 
-     const conn = await mongoose.connect('mongodb+srv://sharinhansha:UtZerdbWbpd9A3p4@cluster0.1dyucts.mongodb.net/')
+     const conn = await mongoose.connect(`mongodb+srv://sharinhansha:UtZerdbWbpd9A3p4@cluster0.1dyucts.mongodb.net/bookmycourt`)
       console.log(`MongoDB Connected: {conn.connection.host}`);
     } catch (error) {
         console.log('error')
