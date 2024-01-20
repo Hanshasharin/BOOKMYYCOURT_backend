@@ -1,3 +1,4 @@
+const { request } = require('express');
 const courts = require('../models/courtSchema');
 const USERS= require('../models/userSchema')
 const jwt = require('jsonwebtoken')
@@ -47,5 +48,11 @@ courts.find().then((response)=>{
     res.staus(500).json('server error')
 })
 }
-
-module.exports={doSignUp,doLogin,getCourtsData}
+const getCourtDatabyId=(req,res)=>{
+    courts.findOne({_id:req.query.id}).then((response)=>{
+        res.status(200).json(response)
+    }).catch((err)=>{
+        res.status(404).json("err")
+    })
+}
+module.exports={doSignUp,doLogin,getCourtsData,getCourtDatabyId}
